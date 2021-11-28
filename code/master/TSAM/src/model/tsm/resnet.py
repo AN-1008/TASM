@@ -26,14 +26,14 @@ __all__ = ['ResNet', 'resnet18', 'resnet34', 'resnet50', 'resnet101',
 
 model_urls = {
     'resnet50': '../../../../data/model_weights/TSM_imagenet_resent50.pth',
-    'resnet50_gated': '../../../../data/model_weights/TSM_imagenet_resent50_gated.pth',
+    'resnet50_gated': '../../../../data/model_weights/TSM_imagenet_resent50.pth',
 }
 
 
 def conv3x3(in_planes, out_planes, stride=1, groups=1, dilation=1):
     """3x3 convolution with padding"""
     return Conv2d(in_planes, out_planes, kernel_size=3, stride=stride,
-                     padding=dilation, groups=groups, bias=False, dilation=dilation)
+                  padding=dilation, groups=groups, bias=False, dilation=dilation)
 
 
 def conv1x1(in_planes, out_planes, stride=1):
@@ -153,7 +153,7 @@ class ResNet(nn.Module):
         self.groups = groups
         self.base_width = width_per_group
         self.conv1 = Conv2d(5, self.inplanes, kernel_size=7, stride=2, padding=3,
-                               bias=False)
+                            bias=False)
         self.bn1 = norm_layer(self.inplanes)
         self.relu = Relu(inplace=True)
         self.maxpool = MaxPool2d(kernel_size=3, stride=2, padding=1)
@@ -259,7 +259,7 @@ def resnet34(pretrained=False, progress=True, **kwargs):
                    **kwargs)
 
 
-def resnet50(pretrained=True, progress=True, gated=True, **kwargs):
+def resnet50(pretrained=False, progress=True, gated=False, **kwargs):
     r"""ResNet-50 model from
     `"Deep Residual Learning for Image Recognition" <https://arxiv.org/pdf/1512.03385.pdf>`_
 
@@ -268,14 +268,17 @@ def resnet50(pretrained=True, progress=True, gated=True, **kwargs):
         progress (bool): If True, displays a progress bar of the download to stderr
     """
     model = _resnet('resnet50', Bottleneck, [3, 4, 6, 3], pretrained, progress,
-                   **kwargs)
+                    **kwargs)
 
-    if gated == True:
+    if gated:
         pretrain_pth = model_urls['resnet50_gated']
     else:
         pretrain_pth = model_urls['resnet50']
 
     weight = torch.load(pretrain_pth)
+    print(pretrain_pth)
+    print(model)
+    print(weight.keys())
     model.load_state_dict(weight)
 
     return model

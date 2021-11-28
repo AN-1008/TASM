@@ -1,0 +1,6 @@
+[2021-11-28 16:01:15,937] {test.py:123} INFO - Overriding "data_loader" of config by given dataset_config
+[2021-11-28 16:01:15,938] {test.py:123} INFO - Overriding "test_data_loader" of config by given dataset_config
+[2021-11-28 16:01:15,942] {util.py:66} INFO - Reading directories under ../../../../data/FVI/Test/JPEGImages/, exclude [], num: 0
+[2021-11-28 16:01:15,943] {util.py:66} INFO - Reading directories under ../../../../data/FVI/Test/random_masks/object_like_middle/35, exclude [], num: 0
+[2021-11-28 16:01:15,946] {util.py:66} INFO - Reading directories under ../../../../data/FVI/Test/JPEGImages/, exclude [], num: 0
+[2021-11-28 16:01:15,947] {util.py:66} INFO - Reading directories under ../../../../data/FVI/Test/random_masks/object_like_middle/35, exclude [], num: 0

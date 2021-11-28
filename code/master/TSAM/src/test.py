@@ -138,7 +138,7 @@ if __name__ == '__main__':
                              'override the train/val/test data settings in config.json)')
     parser.add_argument('-r', '--resume', default=None, type=str,
                         help='path to latest checkpoint (default: None)')
-    parser.add_argument('-p', '--pretrained_path', default="../../../../data/model_weights/TSM_imagenet_resent50_gated.pth", type=str,
+    parser.add_argument('-p', '--pretrained_path', default="../../../../data/model_weights/TSM_imagenet_resent50.pth", type=str,
                         help='pretrained checkpoint path (default: None)')
     parser.add_argument('-od', '--output_root_dir', default=None, type=str,
                         help='Output root directory for the test mode (default: None)')
