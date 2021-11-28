@@ -14,11 +14,11 @@ class BaseInference:
     """
 
     def __init__(
-        self, model, losses, metrics, optimizer_g,
-        optimizer_d_s, optimizer_d_t,
-        resume, config,
-        train_logger=None,
-        pretrained_path=None,
+            self, model, losses, metrics, optimizer_g,
+            optimizer_d_s, optimizer_d_t,
+            resume, config,
+            train_logger=None,
+            pretrained_path=None,
     ):
         self.config = config
         self.logger = logging.getLogger(self.__class__.__name__)
@@ -119,7 +119,7 @@ class BaseInference:
         monitor_value = None
         if self.monitor_mode != 'off':
             try:
-                if (self.monitor_mode == 'min' and log[self.monitor] < self.monitor_best) or\
+                if (self.monitor_mode == 'min' and log[self.monitor] < self.monitor_best) or \
                         (self.monitor_mode == 'max' and log[self.monitor] > self.monitor_best):
                     self.monitor_best = log[self.monitor]
                     best = True
@@ -127,13 +127,12 @@ class BaseInference:
 
             except KeyError:
                 if epoch == 1:
-                    msg = "Warning: Can\'t recognize metric named '{}' ".format(self.monitor)\
-                        + "for performance monitoring. model_best checkpoint won\'t be updated."
+                    msg = "Warning: Can\'t recognize metric named '{}' ".format(self.monitor) \
+                          + "for performance monitoring. model_best checkpoint won\'t be updated."
                     self.logger.warning(msg)
 
         if epoch % self.save_freq == 0 or best:
             self._save_checkpoint(epoch, save_best=best, monitor_value=monitor_value)
-            
 
     def _train_epoch(self, epoch):
         """
@@ -208,15 +207,7 @@ class BaseInference:
     def _load_pretrained(self, pretrained_path):
         self.logger.info(f"Loading pretrained checkpoint from {pretrained_path}")
         checkpoint = torch.load(pretrained_path)
-        # 以下211-217行内容为lianqi修改部分
-        # create new OrderedDict that does not contain `module.`
-        from collections import OrderedDict
-        new_checkpoint = OrderedDict()
-        for k, v in checkpoint.items():
-            name = k[7:]  # remove `module.`，表面从第7个key值字符取到最后一个字符，正好去掉了module.
-            new_checkpoint[name] = v  # 新字典的key值对应的value为一一对应的值。
-
-        pretrained_state = new_checkpoint['state_dict']
+        pretrained_state = checkpoint['state_dict']
         if self.pretrained_load_strict:
             self.model.load_state_dict(pretrained_state)
         else:
