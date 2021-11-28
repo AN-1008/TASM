@@ -1,0 +1,7 @@
+[2021-11-27 23:11:13,031] {test.py:123} INFO - Overriding "data_loader" of config by given dataset_config
+[2021-11-27 23:11:13,031] {test.py:123} INFO - Overriding "test_data_loader" of config by given dataset_config
+[2021-11-27 23:11:13,032] {util.py:66} INFO - Reading directories under ../../../../data/DAVIS/Train/JPEGImages/, exclude [], num: 0
+[2021-11-27 23:11:13,032] {util.py:66} INFO - Reading directories under ../../../../data/DAVIS/Train/random_masks/, exclude [], num: 2
+[2021-11-27 23:11:13,034] {util.py:41} INFO - Directory masked_frames made
+[2021-11-27 23:11:13,036] {util.py:41} INFO - Directory result_frames made
+[2021-11-27 23:11:13,037] {util.py:41} INFO - Directory optical_flows made

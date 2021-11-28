@@ -1,0 +1,6 @@
+[2021-11-27 23:03:45,087] {test.py:123} INFO - Overriding "data_loader" of config by given dataset_config
+[2021-11-27 23:03:45,088] {test.py:123} INFO - Overriding "test_data_loader" of config by given dataset_config
+[2021-11-27 23:03:45,089] {util.py:66} INFO - Reading directories under ../../../../data/DAVIS/Test/JPEGImages, exclude [], num: 0
+[2021-11-27 23:03:45,089] {util.py:66} INFO - Reading directories under ../../../../data/DAVIS/Test/Annotations, exclude [], num: 2
+[2021-11-27 23:03:45,091] {util.py:66} INFO - Reading directories under ../../../../data/DAVIS/Test/JPEGImages, exclude [], num: 0
+[2021-11-27 23:03:45,092] {util.py:66} INFO - Reading directories under ../../../../data/DAVIS/Test/Annotations, exclude [], num: 2

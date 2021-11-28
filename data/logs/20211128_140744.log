@@ -1,0 +1,3 @@
+[2021-11-28 14:07:49,032] {test.py:123} INFO - Overriding "data_loader" of config by given dataset_config
+[2021-11-28 14:07:49,033] {test.py:123} INFO - Overriding "test_data_loader" of config by given dataset_config
+[2021-11-28 14:07:49,033] {util.py:66} INFO - Reading directories under ../../../../data/FVI/Train/JPEGImages/, exclude [], num: 0

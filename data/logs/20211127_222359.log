@@ -1,0 +1,10 @@
+[2021-11-27 22:24:02,990] {test.py:123} INFO - Overriding "data_loader" of config by given dataset_config
+[2021-11-27 22:24:02,991] {test.py:123} INFO - Overriding "test_data_loader" of config by given dataset_config
+[2021-11-27 22:24:02,991] {util.py:66} INFO - Reading directories under ../../../../data/FVI/Test/JPEGImages/, exclude [], num: 0
+[2021-11-27 22:24:02,992] {util.py:66} INFO - Reading directories under ../../../../data/FVI/Test/random_masks/object_like_middle/35, exclude [], num: 0
+[2021-11-27 22:24:02,995] {util.py:41} INFO - Directory ../../../../data/VOS_resized2\masked_frames made
+[2021-11-27 22:24:02,996] {util.py:41} INFO - Directory ../../../../data/VOS_resized2\result_frames made
+[2021-11-27 22:24:02,998] {util.py:41} INFO - Directory ../../../../data/VOS_resized2\optical_flows made
+[2021-11-27 22:24:02,999] {util.py:66} INFO - Reading directories under ../../../../data/FVI/Test/JPEGImages/, exclude [], num: 0
+[2021-11-27 22:24:02,999] {util.py:66} INFO - Reading directories under ../../../../data/FVI/Test/random_masks/object_like_middle/35, exclude [], num: 0
+[2021-11-27 22:24:03,001] {util.py:66} INFO - Reading directories under ../../../../data/FVI/Test/JPEGImages/, exclude [], num: 0
